@@ -9,12 +9,18 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
+        
+        /* ESTILO DO BODY COM BACKGROUND DA IMAGEM E DEGRADÊ DE REFERÊNCIA */
         body {
-            background-color: #0a0a0c;
+            /* Degradê de referência entre #00080a e #05646d com a imagem card-bg.png por cima */
+            background: linear-gradient(180deg, rgba(0, 8, 10, 0.92) 0%, rgba(5, 100, 109, 0.85) 100%),
+                        url('card-bg.png') center/cover fixed no-repeat,
+                        linear-gradient(180deg, #00080a 0%, #05646d 100%);
             color: #e6e6e6;
             font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
         }
 
         /* BARRA DE NAVEGAÇÃO */
@@ -22,7 +28,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 12, 0.92);
+            background: rgba(0, 8, 10, 0.95);
             backdrop-filter: blur(8px);
             display: flex;
             justify-content: space-between;
@@ -47,29 +53,30 @@
             transition: color 0.3s;
         }
         .nav-links a:hover {
-            color: #e50914;
+            color: #05646d;
         }
 
         /* HERO / CABEÇALHO PRINCIPAL */
         header {
             padding: 160px 20px 90px;
             text-align: center;
-            background: radial-gradient(circle at center, #1a1a24 0%, #0a0a0c 100%);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
+        /* Logo no lugar do texto inicial */
         .hero-logo {
-            max-width: 280px;
+            max-width: 320px;
             width: 100%;
             height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.7));
+            margin-bottom: 25px;
+            filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.8));
         }
         header p {
-            font-size: 1.1em;
-            color: #999;
+            font-size: 1.15em;
+            color: #d0d0d0;
             max-width: 650px;
             margin: 0 auto 35px;
             line-height: 1.6;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
 
         /* SEÇÕES */
@@ -86,46 +93,47 @@
             margin-bottom: 45px;
             color: #fff;
             position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .section-title::after {
             content: '';
             display: block;
             width: 60px;
             height: 3px;
-            background: #e50914;
+            background: #05646d;
             margin: 12px auto 0;
             border-radius: 2px;
         }
 
-        /* CARDS COM IMAGEM DE BACKGROUND */
+        /* GRIDS DE CONTEÚDO */
         .services-grid, .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
         
-        /* ESTILO DO CARD COM A SUA IMAGEM DE FUNDO (card-bg.png) */
-        .card-bg-custom {
-            background: linear-gradient(135deg, rgba(15, 15, 20, 0.88), rgba(10, 10, 12, 0.95)), 
-                        url('card-bg.png') center/cover no-repeat;
+        /* ESTILO DOS CARDS DE SERVIÇOS */
+        .card-custom {
+            background: rgba(0, 8, 10, 0.75);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 30px 25px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
-        .card-bg-custom:hover {
+        .card-custom:hover {
             transform: translateY(-5px);
-            border-color: #e50914;
-            box-shadow: 0 15px 30px rgba(229, 9, 20, 0.2);
+            border-color: #05646d;
+            box-shadow: 0 15px 30px rgba(5, 100, 109, 0.3);
         }
-        .card-bg-custom h3 {
+        .card-custom h3 {
             margin-top: 0;
             color: #ffffff;
             font-size: 1.25em;
             letter-spacing: 1px;
         }
-        .card-bg-custom p {
+        .card-custom p {
             color: #bbb;
             font-size: 0.95em;
             line-height: 1.6;
@@ -134,7 +142,7 @@
 
         /* CARDS DE VÍDEO */
         .video-card {
-            background: #121216;
+            background: rgba(0, 8, 10, 0.8);
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -142,7 +150,7 @@
             transition: border-color 0.3s;
         }
         .video-card:hover {
-            border-color: #e50914;
+            border-color: #05646d;
         }
         .video-card h3 {
             font-size: 1.05em;
@@ -172,13 +180,13 @@
         }
         .photo-card img:hover {
             transform: scale(1.03);
-            border-color: #e50914;
+            border-color: #05646d;
         }
 
         /* BOTÕES */
         .btn {
             display: inline-block;
-            background-color: #e50914;
+            background-color: #05646d;
             color: white;
             padding: 14px 32px;
             text-decoration: none;
@@ -188,12 +196,12 @@
             text-transform: uppercase;
             font-size: 0.85em;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+            box-shadow: 0 4px 15px rgba(5, 100, 109, 0.4);
         }
         .btn:hover {
-            background-color: #ff1e27;
+            background-color: #07828e;
             transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(229, 9, 20, 0.5);
+            box-shadow: 0 6px 20px rgba(5, 100, 109, 0.6);
         }
         .btn-youtube {
             background-color: #FF0000;
@@ -229,13 +237,13 @@
         footer {
             text-align: center;
             padding: 40px 20px;
-            background: #050507;
-            color: #555;
+            background: #000506;
+            color: #777;
             font-size: 0.85em;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         footer a {
-            color: #e50914;
+            color: #05646d;
             text-decoration: none;
         }
     </style>
@@ -256,7 +264,7 @@
         </div>
     </nav>
 
-    <!-- CABEÇALHO COM LOGO -->
+    <!-- CABEÇALHO PRINCIPAL COM A LOGO -->
     <header id="inicio">
         <img src="logo oldstan,png.PNG" alt="Old Stan Films" class="hero-logo">
         <p>Produtora Audiovisual fidedigna à essência e às histórias da região dos Inhamuns.</p>
@@ -266,28 +274,28 @@
     <!-- SOBRE NÓS -->
     <section class="section" id="sobre">
         <h2 class="section-title">Sobre Nós</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #b0b0b0; line-height: 1.8; font-size: 1.05em;">
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #d0d0d0; line-height: 1.8; font-size: 1.05em; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">
             Comandada por <strong>Miquéias Holanda</strong>, a <strong>Old Stan Films</strong> é uma empresa especializada na criação e produção de conteúdo audiovisual de alto impacto na região dos Inhamuns. Atuamos desde a captação técnica e sensível até a pós-produção detalhada, transformando eventos, projetos institucionais e ensaios em memórias visuais inesquecíveis.
         </p>
     </section>
 
-    <!-- SERVIÇOS (COM BACKGROUND CUSTOMIZADO) -->
+    <!-- SERVIÇOS -->
     <section class="section" id="servicos">
         <h2 class="section-title">O Que Fazemos</h2>
         <div class="services-grid">
-            <div class="card-bg-custom">
+            <div class="card-custom">
                 <h3>Vídeos Institucionais</h3>
                 <p>Produções direcionadas a empresas e marcas que desejam comunicar sua essência, produtos ou serviços com alto nível de profissionalismo.</p>
             </div>
-            <div class="card-bg-custom">
+            <div class="card-custom">
                 <h3>Documentários</h3>
                 <p>Registros profundos e narrativas visuais que preservam a cultura, histórias de vida e a memória regional dos Inhamuns.</p>
             </div>
-            <div class="card-bg-custom">
+            <div class="card-custom">
                 <h3>Cobertura de Eventos</h3>
                 <p>Captura dinâmica de momentos marcantes em eventos corporativos, sociais e culturais, focando nos melhores ângulos e detalhes.</p>
             </div>
-            <div class="card-bg-custom">
+            <div class="card-custom">
                 <h3>Ensaios Fotográficos</h3>
                 <p>Fotografia profissional individual, corporativa ou temática, garantindo iluminação, enquadramento e pós-produção impecáveis.</p>
             </div>
@@ -333,7 +341,7 @@
     <!-- CONTATO -->
     <section class="section" id="contato" style="text-align: center;">
         <h2 class="section-title">Vamos Tirar Seu Projeto do Papel?</h2>
-        <p style="color: #888; margin-bottom: 30px; font-size: 1.05em;">Entre em contato conosco para solicitar um orçamento ou tirar dúvidas sobre sua produção.</p>
+        <p style="color: #bbb; margin-bottom: 30px; font-size: 1.05em;">Entre em contato conosco para solicitar um orçamento ou tirar dúvidas sobre sua produção.</p>
         <a href="https://wa.me/5588981158154" class="btn" style="background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);" target="_blank">
             Falar no WhatsApp
         </a>
